@@ -31,33 +31,60 @@
             color: #EB6123;
             text-align: center;
             font-size: 50px;
+            margin: 80px;
+        }
+
+        .primary-button {
+            color: white;
+            background-color: #DA4200;
+            font-size: 24px;
+            padding: 14px 40px;
+            border-radius: 4px;
+            transition-duration: 0.4s;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            margin: 20px;
+        }
+
+        .primary-button:hover {
+            background-color: white; /* Green */
+            color: #DA4200;
+        }
+
+        .button:active {
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
         }
     </style>
 </head>
 <body>
 
-<h1 class="title">Pick your monster!</h1>
+<h1 class="title">Pick Your Monster!</h1>
 <div class="container">
     <div class="box">
-        <a href="#WitchCreation.php">
+        <a href="AbilityPicker.php?monsterTypeNUM=1">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV7V3T1CWi98ebwLeic2A1xE28m5wAAOOfQw&usqp=CAU"></img>
         </a>
     </div>
     
     <div class="box">
-        <a href="#WarewolfCreation.php">
+        <a href="AbilityPicker.php?monsterTypeNUM=2">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV7V3T1CWi98ebwLeic2A1xE28m5wAAOOfQw&usqp=CAU"></img>
         </a>
     </div>
 
     <div class="box">
-        <a href="#VampireCreation.php">
+        <a href="AbilityPicker.php?monsterTypeNUM=3">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV7V3T1CWi98ebwLeic2A1xE28m5wAAOOfQw&usqp=CAU"></img>
         </a>
     </div>
 </div>
 
-<button><a href="../index.php">Back</a></button>
-
+<div class="container">
+    <a href="../index.php">
+        <button class="primary-button">Back</button>
+    </a>
+</div>
 </body>
 </html>
