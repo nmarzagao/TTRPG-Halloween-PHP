@@ -1,42 +1,8 @@
 <?php
 
-class Charecter {
-    public $name;
-    public $monsterType;
-    public $stats;
-    public $abilities;
-
-    public function __construct($name, $monsterType) {
-        $this->name        = $name;
-        $this->monsterType = $monsterType;
-        $this->stats       = new Stats($monsterType);
-
-        switch($this->monsterType) {
-            case MonsterType::WITCH:
-                $this->abilities = new Witch();
-                break;
-
-            case MonsterType::WAREWOLF:
-                $this->abilities = new Warewolf();
-                break;
-
-            case MonsterType::VAMPIRE:
-                $this->abilities = new Vampire();
-                break;
-
-            default:
-                return NULL;
-        }   
-    }
-}
-
-
-class MonsterTypes {
-    const WITCH    = 1;
-    const WAREWOLF = 2;
-    const VAMPIRE  = 3;
-}
-
+const WITCH     = 1;
+const WAREWOLF  = 2;
+const VAMPIRE   = 3;
 
 class Stats {
     public $hitpoints; // based on const
@@ -50,7 +16,7 @@ class Stats {
 
     public function __construct($monsterType) {
         switch ($monsterType) {
-            case MonsterType::WITCH:
+            case WITCH:
                 $this->strength     = 0;
                 $this->constitution = 1;
                 $this->dexterity    = 2;
@@ -62,7 +28,7 @@ class Stats {
                 
                 break;
 
-            case MonsterType::WAREWOLF:
+            case WAREWOLF:
                 $this->inteligence  = 0;
                 $this->dexterity    = 1;
                 $this->constitution = 2;
@@ -74,7 +40,7 @@ class Stats {
                 
                 break; 
 
-            case MonsterType::VAMPIRE:
+            case VAMPIRE:
                 $this->constitution = 0;
                 $this->strength     = 1;
                 $this->inteligence  = 2;
@@ -87,21 +53,10 @@ class Stats {
                 break;
 
             default:
-                echo "Error: Invalid MonsterType\n";
+                echo "Error: Invalid MonsterTypes\n";
                 break;
         }
     }
 }
 
-// write there 4 abilities
-class Witch {
-    public $null;
-}
-
-class Warewolf {
-    public $null;
-}
-
-class Vampire {
-    public $null;
-}
+?>
